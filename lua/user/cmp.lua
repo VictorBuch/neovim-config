@@ -17,20 +17,20 @@ end
 
 local kind_icons = {
 	Text = "",
-	Method = "",
-	Function = "",
-	Constructor = "",
+	Method = "m",
+	Function = "",
+	Constructor = "",
 	Field = "",
-	Variable = "",
+	Variable = "",
 	Class = "",
 	Interface = "",
-	Module = "",
+	Module = "",
 	Property = "",
 	Unit = "",
 	Value = "",
 	Enum = "",
-	Keyword = "",
-	Snippet = "",
+	Keyword = "",
+	Snippet = "",
 	Color = "",
 	File = "",
 	Reference = "",
@@ -97,12 +97,12 @@ cmp.setup({
 		format = function(entry, vim_item)
 			vim_item.kind = kind_icons[vim_item.kind]
 			vim_item.menu = ({
-				nvim_lsp = "",
-				nvim_lua = "",
-				luasnip = "",
-				buffer = "",
-				path = "",
-				emoji = "",
+				nvim_lsp = "Lsp",
+				nvim_lua = "LuaLsp",
+				luasnip = "Snip",
+				buffer = "Buff",
+				path = "Path",
+				emoji = "Emoji",
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -118,6 +118,11 @@ cmp.setup({
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
+	-- window = {
+	-- 	documentation = {
+	-- 		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+	-- 	},
+	-- },
 	window = {
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
