@@ -56,7 +56,7 @@ return packer.startup(function(use)
 	use({ "lewis6991/impatient.nvim" })
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "goolord/alpha-nvim" })
-
+	use({ "kylechui/nvim-surround" })
 	-- Colorschemes
 	use("Mofiqul/dracula.nvim")
 
