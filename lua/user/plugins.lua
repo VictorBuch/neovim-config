@@ -48,7 +48,7 @@ return packer.startup(function(use)
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 	use({ "kyazdani42/nvim-web-devicons" })
 	use({ "kyazdani42/nvim-tree.lua" })
-	use({ "akinsho/bufferline.nvim" })
+	use({ "akinsho/bufferline.nvim", tag = "v2.*" })
 	use({ "moll/vim-bbye" })
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "akinsho/toggleterm.nvim", tag = "v2.*" })
@@ -57,11 +57,16 @@ return packer.startup(function(use)
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "goolord/alpha-nvim" })
 	use({ "kylechui/nvim-surround" })
-
+	use({
+		"themaxmarchuk/tailwindcss-colors.nvim",
+		-- load only on require("tailwindcss-colors")
+		module = "tailwindcss-colors",
+	})
 	-- Colorschemes
 	use("Mofiqul/dracula.nvim")
 	use("folke/tokyonight.nvim")
 	use("shaunsingh/nord.nvim")
+	use("catppuccin/vim")
 
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
@@ -91,6 +96,7 @@ return packer.startup(function(use)
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
+	use("kdheepak/lazygit.nvim")
 
 	--Github copilot
 	use({
