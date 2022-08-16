@@ -75,7 +75,9 @@ M.on_attach = function(client, bufnr)
 	if client.name == "tsserver" then
 		client.resolved_capabilities.document_formatting = false
 	end
-
+	if client.name == "svelte" then
+		client.resolved_capabilities.document_formatting = false
+	end
 	if client.name == "volar" then
 		client.resolved_capabilities.document_formatting = false
 	end

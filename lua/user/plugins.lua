@@ -51,14 +51,17 @@ return packer.startup(function(use)
 	use({ "akinsho/bufferline.nvim" })
 	use({ "moll/vim-bbye" })
 	use({ "nvim-lualine/lualine.nvim" })
-	use({ "akinsho/toggleterm.nvim" })
+	use({ "akinsho/toggleterm.nvim", tag = "v2.*" })
 	use({ "ahmedkhalf/project.nvim" })
 	use({ "lewis6991/impatient.nvim" })
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "goolord/alpha-nvim" })
 	use({ "kylechui/nvim-surround" })
+
 	-- Colorschemes
 	use("Mofiqul/dracula.nvim")
+	use("folke/tokyonight.nvim")
+	use("shaunsingh/nord.nvim")
 
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
@@ -88,6 +91,18 @@ return packer.startup(function(use)
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
+
+	--Github copilot
+	use({
+		"github/copilot.vim",
+		config = function()
+			-- copilot assume mapped
+			vim.g.copilot_assume_mapped = true
+			vim.g.copilot_no_tab_map = true
+		end,
+	})
+
+	use({ "hrsh7th/cmp-copilot" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

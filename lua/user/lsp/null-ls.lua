@@ -28,7 +28,19 @@ null_ls.setup({
 	end,
 	debug = false,
 	sources = {
-		formatting.prettier,
+		formatting.prettierd.with({
+			filetypes = {
+				"html",
+				"json",
+				"svelte",
+				"markdown",
+				"css",
+				"javascript",
+				"javascriptreact",
+				"vue",
+				"volar",
+			},
+		}),
 		formatting.stylua,
 	},
 })

@@ -97,6 +97,7 @@ cmp.setup({
 		format = function(entry, vim_item)
 			vim_item.kind = kind_icons[vim_item.kind]
 			vim_item.menu = ({
+				copilot = "copilot",
 				nvim_lsp = "Lsp",
 				nvim_lua = "LuaLsp",
 				luasnip = "Snip",
@@ -108,6 +109,7 @@ cmp.setup({
 		end,
 	},
 	sources = {
+		{ name = "copilot" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
@@ -128,6 +130,6 @@ cmp.setup({
 		documentation = cmp.config.window.bordered(),
 	},
 	experimental = {
-		ghost_text = true,
+		ghost_text = false,
 	},
 })
