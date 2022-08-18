@@ -62,6 +62,7 @@ return packer.startup(function(use)
 		-- load only on require("tailwindcss-colors")
 		module = "tailwindcss-colors",
 	})
+
 	-- Colorschemes
 	use("Mofiqul/dracula.nvim")
 	use("folke/tokyonight.nvim")
@@ -75,7 +76,6 @@ return packer.startup(function(use)
 	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-nvim-lua" })
-
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) --snippet engine
 	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use

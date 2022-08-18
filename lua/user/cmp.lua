@@ -8,7 +8,7 @@ if not snip_status_ok then
 	return
 end
 
-require("luasnip/loaders/from_vscode").lazy_load()
+-- require("luasnip/loaders/from_vscode").lazy_load("./luasnip.lua")
 
 local check_backspace = function()
 	local col = vim.fn.col(".") - 1
@@ -62,7 +62,7 @@ cmp.setup({
 		}),
 		-- Accept currently selected item. If none selected, `select` first item.
 		-- Set `select` to `false` to only confirm explicitly selected items.
-		["<CR>"] = cmp.mapping.confirm({ select = false }),
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -91,16 +91,21 @@ cmp.setup({
 			"i",
 			"s",
 		}),
+		["<c-l>"] = cmp.mapping(function()
+			if luasnip.choice_active() then
+				luasnip.change_choice(1)
+			end
+		end, { "i", "s" }),
 	}),
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
 			vim_item.kind = kind_icons[vim_item.kind]
 			vim_item.menu = ({
+				luasnip = "Snip",
 				copilot = "copilot",
 				nvim_lsp = "Lsp",
 				nvim_lua = "LuaLsp",
-				luasnip = "Snip",
 				buffer = "Buff",
 				path = "Path",
 				emoji = "Emoji",
@@ -109,10 +114,10 @@ cmp.setup({
 		end,
 	},
 	sources = {
+		{ name = "luasnip" },
 		{ name = "copilot" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
-		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
 	},
@@ -129,7 +134,7 @@ cmp.setup({
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
 	},
-	experimental = {
-		ghost_text = false,
-	},
+	-- experimental = {
+	-- 	ghost_text = false,
+	-- },
 })
