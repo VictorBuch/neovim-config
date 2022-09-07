@@ -7,7 +7,7 @@ ls.config.set_config({
 	history = true,
 	-- Update more often, :h events for more info.
 	update_events = "TextChanged,TextChangedI",
-	ext_base_prio = 300,
+	ext_base_prio = 1,
 	-- minimal increase in priority.
 	ext_prio_increase = 1,
 	enable_autosnippets = true,
@@ -68,7 +68,7 @@ local consoleLogString = function()
 end
 
 local consoleLogStringValue = function()
-	return fmt('console.log("{}", {})', { same(1), i(1) })
+	return fmt([[console.log("{}", {})]], { same(1), i(1) })
 end
 
 local class = function()
