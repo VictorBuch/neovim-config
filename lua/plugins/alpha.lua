@@ -35,7 +35,7 @@ return {
 			dashboard.button("fg", "  > Find Word", "<cmd>Telescope live_grep<CR>"),
 			dashboard.button("fr", "󰁯  > Find Recent", "<cmd>Telescope oldfiles<CR>"),
 			dashboard.button("sr", "󰁯  > Restore Session For Current Directory", "<cmd>SessionRestore<CR>"),
-			dashboard.button("c", "  > Configuration", ":e ~/.config/nvim/init.lua <CR>"),
+			dashboard.button("c", "  > Configuration", "<cmd>e ~/.config/nvim/init.lua <CR>"),
 			dashboard.button("q", "  > Quit NVIM", "<cmd>qa<CR>"),
 		}
 

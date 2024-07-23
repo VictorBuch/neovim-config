@@ -9,9 +9,9 @@ return {
         options = {
             mode = "tabs",
             style_preset = bufferline.style_preset.default,
-            close_command = "bdelete! %d",       -- can be a string | function, | false see "Mouse actions"
-            right_mouse_command = "bdelete! %d", -- can be a string | function | false, see "Mouse actions"
-            left_mouse_command = "buffer %d",    -- can be a string | function, | false see "Mouse actions"
+            close_command = "tabclose! %d",       -- can be a string | function, | false see "Mouse actions"
+            right_mouse_command = "tabclose! %d", -- can be a string | function | false, see "Mouse actions"
+            left_mouse_command = "tab %d",    -- can be a string | function, | false see "Mouse actions"
         }
         })
     end,

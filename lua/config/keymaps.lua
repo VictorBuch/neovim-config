@@ -44,6 +44,8 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 local builtin = require("telescope.builtin")
 keymap.set("n", "<leader>ff", builtin.find_files, opts)
 keymap.set("n", "<leader>fg", builtin.live_grep, opts)
+keymap.set("n", "<leader>fr", builtin.oldfiles, opts)
+keymap.set("n", "<leader>fb", builtin.buffers, opts)
 
 -- Neotree
 keymap.set("n", "<leader>e", ":Neotree filesystem toggle left <CR>", opts)
