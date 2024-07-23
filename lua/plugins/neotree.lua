@@ -7,7 +7,7 @@ return {
             close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
             filesystem = {
                 filtered_items = {
-                    hide_dotfiles = false,
+                    hide_dotfiles = false
                 },
                 follow_current_file = {
                     enabled = true,
